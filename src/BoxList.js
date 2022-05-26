@@ -5,23 +5,10 @@ import "./boxList.css"
 import {v4 as uuid} from "uuid"
 
 function BoxList() {
-    //TEMP BOXES FOR TESTING
-    const TESTBOXES = [
-        {
-            id:uuid(),
-            width:100,
-            height:150,
-            backgroundColor: 'blue'
-        },{
-            id:uuid(),
-            width:120,
-            height:150,
-            backgroundColor: 'green'
-        }
-    ]
+    
     
     //State for storing list of boxes
-    const [boxes, setBoxes] = useState(TESTBOXES)
+    const [boxes, setBoxes] = useState([])
 
     //Removes box when X button is clicked
     const removeBox = (id) =>{
@@ -45,7 +32,7 @@ function BoxList() {
         <NewBoxForm
         createBox={createBox}
         />
-        <div className='boxList'>
+        <div data-testid="boxlist" className='boxList'>
             {boxes.map(box=>{return(
                 <Box 
                 width={box.width} 

@@ -1,4 +1,3 @@
-import {useState} from 'react'
 import './box.css'
 
 function Box({width,height,backgroundColor, removeBox, id}) {
